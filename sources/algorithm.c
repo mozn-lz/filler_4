@@ -6,7 +6,7 @@
 /*   By: msefako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/02 14:51:51 by msefako           #+#    #+#             */
-/*   Updated: 2018/08/26 05:37:36 by msefako          ###   ########.fr       */
+/*   Updated: 2018/08/27 22:51:16 by msefako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,17 +91,17 @@ int			compare(int player)
 	if (rt.map.stat == 1)
 		return (1);
 	rt.token = read_token();
-	rt.coords.i = 0;
-	while (rt.coords.i <= (rt.map.h - rt.token.h))
+	rt.coords.i = -1;
+	while (++rt.coords.i <= (rt.map.h - rt.token.h))
 	{
 		rt.coords.j = 0;
 		while (rt.coords.j <= (rt.map.w - rt.token.w))
 		{
-			if (star_check(&rt.token, rt.map.map, rt.coords.i, rt.coords.j) == 1)
+			if (star_check(&rt.token, rt.map.map, rt.coords.i,
+						rt.coords.j) == 1)
 				ft_lstaddto(&moves, rt.coords.i, rt.coords.j);
 			rt.coords.j++;
 		}
-		rt.coords.i++;
 	}
 	if (moves == NULL)
 		return (1);
