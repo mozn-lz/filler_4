@@ -106,6 +106,6 @@ int			compare(int player)
 	if (moves == NULL)
 		return (1);
 	find_place(moves, rt.map, rt.map.h, rt.token);
-	print_optim(moves);
+	print_best(moves);
 	return (0);
 }

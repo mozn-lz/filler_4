@@ -53,6 +53,6 @@ t_token			read_token();
 int				rd_pce();
 int				compare();
 int				distance_calc(int ha, int wa, int hb, int wb);
-void			print_optim(t_filler *moves);
+void			print_best(t_filler *moves);
 
 #endif
